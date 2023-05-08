@@ -1,3 +1,2 @@
 # CursoQAebac
 
-# Teste
