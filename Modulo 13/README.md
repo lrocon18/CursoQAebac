@@ -19,7 +19,7 @@ Siga as etapas abaixo para executar os testes de API:
 Clone este repositório em sua máquina local.
 Instale as dependências do projeto executando o seguinte comando no terminal:
 
-npm install
+npm install -g serverest
 
 Inicie a API utilizando o ServeRest com o seguinte comando:
 
