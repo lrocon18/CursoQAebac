@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clonar projeto') {
+            steps {
+                git 'https://github.com/lrocon18/CursoQAebac.git'
+            }
+        }
+        stage('Instalar dependencias') {
+            steps {
+                cd 'Modulo 14'
+                bat 'npm install'
+            }
+        }
+        stage('Executar testes') {
+            steps {
+                bat 'npm run cy:run'
+            }
+        }
+    }
+}
