@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clonar o repositorio') {
+            steps {
+                git branch: 'master', url: 'https://github.com/lrocon18/CursoQAebac/tree/master/Modulo%2017'
+            }
+        }
+            stage('Instalar dependendias') {
+            steps {
+                sh 'npm install'
+            }
+                stage('Iniciar') {
+            steps {
+                sh 'start appium'
+            }
+        }
+                stage('Executar testes') {
+            steps {
+                sh 'npx wdio run ./wdio.conf.js'
+            }
+                stage('Executar relatório') {
+            steps {
+                sh 'npx allure open allure-report'
+            }
+        }
+    }
+}
+}
+}
